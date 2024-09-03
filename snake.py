@@ -45,6 +45,15 @@ class Snake:
 
         self.head.forward(MOVE_DISTANCE)
 
+    def reset(self):
+        """once hit the walls, hide snake then create a new one in home position."""
+        for seg in self.segment_list:
+            seg.hideturtle()
+        self.segment_list.clear()
+        self.create_snake()
+        self.head = self.segment_list[0]
+        self.head.home()
+
     def up(self):
         if self.head.heading() != DOWN:    # prevent snake to go in opposite direction.
             self.head.setheading(UP)
