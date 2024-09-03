@@ -13,7 +13,7 @@ class Food(Turtle):
 
     def refresh(self):
         """show food in a random location."""
-        self.teleport(x=random.randint(-280, 280), y=random.randint(-280, 280))
+        self.goto(x=random.randint(-280, 280), y=random.randint(-280, 280))
 
 
 
